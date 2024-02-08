@@ -21,15 +21,15 @@ jobs:
         shell: "bash"
         run: |
           yq -i -o json '.version="${{ github.event.release.tag_name }}"' \
-            "${{ github.workspace }}/custom_components/opentherm-web/manifest.json"
+            "${{ github.workspace }}/custom_components/opentherm_web/manifest.json"
 
       - name: "ZIP the integration directory"
         shell: "bash"
         run: |
-          cd "${{ github.workspace }}/custom_components/opentherm-web"
+          cd "${{ github.workspace }}/custom_components/opentherm_web"
           zip opentherm_web.zip -r ./
 
       - name: "Upload the ZIP file to the release"
         uses: softprops/action-gh-release@v0.1.15
         with:
-          files: ${{ github.workspace }}/custom_components/opentherm-web/opentherm_web.zip
+          files: ${{ github.workspace }}/custom_components/opentherm_web/opentherm_web.zip

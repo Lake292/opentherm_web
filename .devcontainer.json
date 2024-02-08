@@ -1,5 +1,5 @@
 {
-    "name": "Lake292/opentherm-web",
+    "name": "Lake292/opentherm_web",
     "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
     "postCreateCommand": "scripts/setup",
     "forwardPorts": [
